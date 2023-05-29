@@ -39,7 +39,7 @@ namespace gateway_api_final.Entities
             builder.Entity<Peripheral>().Property(p => p.CreationDate).IsRequired();
             builder.Entity<Peripheral>().Property(p => p.Status).IsRequired();
 
-            DataSeedGeneration(builder, 50);
+            // DataSeedGeneration(builder, 50);
 
         }
 

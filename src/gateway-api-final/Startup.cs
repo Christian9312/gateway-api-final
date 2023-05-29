@@ -34,7 +34,9 @@ namespace gateway_api_final
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.ConfigureMySqlContext(Configuration);
+            //services.ConfigureMySqlContext(Configuration);
+            services.AddDbContext<RepositoryContext>(options =>
+            options.UseSqlite(Configuration["mysqlconnection:connectionSqlite"]));
             // services.AddDbContext<RepositoryContext>(options => options.UseInMemoryDatabase("gateways-api-database"));
             services.AddWrapperServices();
             services.ConfigureLoggerService();
